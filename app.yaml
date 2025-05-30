@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: jpow
+  labels:
+    app: jpow
+spec:
+  type: ClusterIP
+  selector:
+    app: jpow
+  ports:
+    - name: tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: jpow
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jpow
+  template:
+    metadata:
+      labels:
+        app: jpow
+        version: v1
+    spec:
+      containers:
+      - name: jpow
+        image: jpow
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
