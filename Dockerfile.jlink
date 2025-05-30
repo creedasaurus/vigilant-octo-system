@@ -1,6 +1,6 @@
 
 # 1st stage, build the app
-FROM container-registry.oracle.com/java/jdk-no-fee-term:21 as build
+FROM container-registry.oracle.com/java/jdk-no-fee-term:21@sha256:5f304ea6be08a0215630c994613b509b2f76dc8d1c619d52d0368b85a36e836e as build
 
 WORKDIR /usr/share
 
@@ -28,7 +28,7 @@ RUN echo "done!"
 
 # 2nd stage, build the final image with the JRI built in the 1st stage
 
-FROM debian:stretch-slim
+FROM debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70
 WORKDIR /helidon
 COPY --from=build /helidon/target/jpow-jri ./
 ENTRYPOINT ["/bin/bash", "/helidon/bin/start"]
