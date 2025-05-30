@@ -20,12 +20,12 @@
     {
       "groupName": "{{manager}} non-major dependencies",
       "groupSlug": "{{manager}}-minor-patch",
-      "matchPackagePatterns": [
-        "*"
-      ],
       "matchUpdateTypes": [
         "minor",
         "patch"
+      ],
+      "matchPackageNames": [
+        "*"
       ]
     }
   ]
