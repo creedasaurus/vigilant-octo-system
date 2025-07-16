@@ -1,6 +1,6 @@
 
 # 1st stage, build the app
-FROM container-registry.oracle.com/java/jdk-no-fee-term:21@sha256:5f304ea6be08a0215630c994613b509b2f76dc8d1c619d52d0368b85a36e836e as build
+FROM container-registry.oracle.com/java/jdk-no-fee-term:24@sha256:24ad671cb73c146cddc5ae48cb960fc8cf3d324239b1900c776e930e1cb948f1 as build
 
 WORKDIR /usr/share
 
