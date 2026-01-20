@@ -1,6 +1,6 @@
 
 # 1st stage, build the app
-FROM ghcr.io/graalvm/graalvm-community:21.0.2-ol9@sha256:6e46c711c90bdbc24e23ccdb6e3fba837d660e68dd4ffeb87abbd3d08e115653 as build
+FROM ghcr.io/graalvm/graalvm-community:25.0.2-ol9@sha256:8d777f85455b6b6cee6ccce7f5c754761041d3aba5e410724934573421671a07 as build
 
 WORKDIR /usr/share
 
